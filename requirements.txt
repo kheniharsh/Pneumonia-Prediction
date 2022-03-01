@@ -1,7 +1,7 @@
 numpy
 pandas
 opencv-python
-Flask
+Flask==1.1.2
 tensorflow
 matplotlib
 Pillow
