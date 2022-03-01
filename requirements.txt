@@ -1,8 +1,11 @@
-numpy==1.20.2
-pandas==1.2.4
+numpy==1.22.2
+pandas==1.4.1
 opencv-python==4.5.5.62
-Flask==1.1.2
+Flask==2.0.3
 tensorflow==2.8.0
 matplotlib==3.5.1
-pillow==9.0.1
-scikit-learn==0.24.1
+Pillow==9.0.1
+scikit-learn==1.0.2
+pickle5==0.0.12
+joblib==1.1.0
+os-sys==2.1.4
