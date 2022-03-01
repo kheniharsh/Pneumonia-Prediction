@@ -6,6 +6,6 @@ tensorflow==2.8.0
 matplotlib==3.5.1
 Pillow==9.0.1
 scikit-learn==1.0.2
-pickle5==0.0.12
+pickle5==0.0.11
 joblib==1.1.0
 os-sys==2.1.4
