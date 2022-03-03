@@ -1,6 +1,7 @@
 # Pneumonia-Prediction
 Hello,
 We have developed a machine learning model using Azure Notebook and web app using flask which is deployed using Azure Web App Service. Our model is accurate around 97% which is traind on 5216 X-Rays of CT Scans using Keras Sequential Model.  
+Link of Web App: https://pneumoniaprediction.azurewebsites.net/
 Link might not work due to 100% usage azure credits.
 
 
