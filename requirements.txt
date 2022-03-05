@@ -1,4 +1,5 @@
-opencv-python==4.5.5.62
+python3-opencv
+libgl1
 Pillow==9.0.1
 scikit-learn==1.0.2
 pickle5==0.0.11
