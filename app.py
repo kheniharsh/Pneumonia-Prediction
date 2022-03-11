@@ -1,4 +1,3 @@
-import os
 import pickle
 import joblib
 import numpy as np
@@ -7,7 +6,7 @@ from flask import Flask,render_template,request
 
 from tensorflow import keras
 model_ct = keras.models.load_model('prediction-ct.h5')
-UPLOAD_FOLDER = 'static/uploads/'
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -17,11 +16,9 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     if request.method == 'POST':
+        predict_ct = []
         file = request.files['imagefile']
-        app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-        predict_ct = [] 
-        img = cv2.imread('static/uploads/'+file.filename)
+        img = cv2.imread(file.filename)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         img = cv2.resize(gray,(150,150))
         predict_ct.append(img)
@@ -32,10 +29,10 @@ def predict():
         classes_x=np.argmax(predict_x, axis=1)
         classes_x
         if classes_x[0]==0:
-            x='Your CT Scan is Normal!'
+            x='Normal'
             print(x)
         else:
-            x='You are suffering from Pneumonia.'
+            x='Pneumonia'
             print(x)
     return render_template('home.html', val=x)
 
