@@ -16,7 +16,7 @@ def predict():
     if request.method == 'POST':
         predict_ct = []
         file = request.files['imagefile']
-        img = cv2.imread(file.filename)
+        img = cv2.imread(file)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         img = cv2.resize(gray,(150,150))
         predict_ct.append(img)
