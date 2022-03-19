@@ -16,9 +16,7 @@ def index():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    if request.method == 'POST':
-        file = request.files['imagefile']
-    
+    file = request.files['imagefile']
     predict_ct = []    
     img = Image.open(file)
     gray = ImageOps.grayscale(img)
@@ -32,12 +30,9 @@ def predict():
     classes_x=np.argmax(predict_x, axis=1)
     classes_x
     if classes_x[0]==0:
-        x='Your Report is Normal'
+        render_template('home.html', val='Your Report is Normal')
     else:
-        x='Oops. Report Consist Pneumonia, Consult a Doctor'
-
-    return render_template('home.html', val=x)
-
+        render_template('home.html', val='Oops. Report Consist Pneumonia, Consult a Doctor')
 
 if __name__ == '__main__':
     app.run()
