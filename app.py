@@ -1,15 +1,15 @@
 import numpy as np
 from PIL import Image, ImageOps
 from flask import Flask,render_template,request
-
 from keras import models
-model_ct = models.load_model('prediction-ct.h5')
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
     return render_template('home.html')
+
+model_ct = models.load_model('prediction-ct.h5')
 
 @app.route('/predict',methods=['POST'])
 def predict():
