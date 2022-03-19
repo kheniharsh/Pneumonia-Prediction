@@ -1,15 +1,18 @@
 import numpy as np
 from PIL import Image, ImageOps
 from flask import Flask,render_template,request
-from keras import models
+import tensorflow as tf
+from tensorflow import keras
+from keras.models import load_model 
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('home.html')
-
 model_ct = models.load_model('prediction_ct.h5')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 
 @app.route('/predict',methods=['POST'])
 def predict():
