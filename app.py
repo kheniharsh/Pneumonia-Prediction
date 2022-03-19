@@ -9,7 +9,7 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-model_ct = models.load_model('prediction-ct.h5')
+model_ct = models.load_model('prediction_ct.h5')
 
 @app.route('/predict',methods=['POST'])
 def predict():
