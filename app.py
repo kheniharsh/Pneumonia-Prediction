@@ -6,7 +6,7 @@ from tensorflow import keras
 
 app = Flask(__name__)
 
-model_ct =  tf.keras.models.load_model('prediction_ct.h5')
+model_ct =  keras.models.load_model('prediction_ct.h5')
 
 @app.route('/')
 def index():
