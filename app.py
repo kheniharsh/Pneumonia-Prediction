@@ -3,15 +3,15 @@ from PIL import Image, ImageOps
 from flask import Flask,render_template,request
 import tensorflow as tf
 from tensorflow import keras
-from keras.models import load_model 
 
 app = Flask(__name__)
 
-model_ct = models.load_model('prediction_ct.h5')
+model_ct =  tf.keras.models.load_model('prediction_ct.h5')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    
+    return render_template('index.html', val='')
 
 
 @app.route('/predict',methods=['POST'])
