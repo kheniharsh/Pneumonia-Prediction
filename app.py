@@ -17,7 +17,7 @@ def index():
 def predict():
     file = request.files['imagefile']
     predict_ct = []    
-    img = Image.open(file)
+    img = Image.open('https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2013/08/26/10/01/ds00135_im00621_pnuesmal_gif.png',file)
     gray = ImageOps.grayscale(img)
     img = gray.resize((150,150), Image.ANTIALIAS)
     imgs = np.asarray(img)
