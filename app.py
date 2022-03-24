@@ -14,8 +14,9 @@ def index():
 
 @app.route('/predict',methods=['POST'])
 def predict():
+    file=request.files['imagefile']
     predict_ct = []    
-    img = Image.open("2.png")
+    img = Image.open(file)
     gray = ImageOps.grayscale(img)
     img = gray.resize((150,150), Image.ANTIALIAS)
     imgs = np.asarray(img)
