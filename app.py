@@ -1,6 +1,6 @@
 import numpy as np
 from PIL import Image, ImageOps
-from flask import Flask,render_template,request
+from flask import *
 import tensorflow as tf
 from tensorflow import keras
 
@@ -15,9 +15,11 @@ def index():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    file = request.files['imagefile']
+    if request.method == 'POST':
+        file = request.files['imagefile']
+    
     predict_ct = []    
-    img = Image.open('https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2013/08/26/10/01/ds00135_im00621_pnuesmal_gif.png',file)
+    img = Image.open(file)
     gray = ImageOps.grayscale(img)
     img = gray.resize((150,150), Image.ANTIALIAS)
     imgs = np.asarray(img)
@@ -34,4 +36,4 @@ def predict():
         render_template('home.html', val='Oops. Report Consist Pneumonia, Consult a Doctor')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(threaded=True)
