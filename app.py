@@ -36,4 +36,4 @@ def predict():
         render_template('home.html', val='Oops. Report Consist Pneumonia, Consult a Doctor')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=8000)
