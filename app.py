@@ -29,11 +29,11 @@ def predict():
 
     predict_x=model_ct.predict(predict_ct) 
     classes_x=np.argmax(predict_x, axis=1)
-    classes_x
+    
     if classes_x[0]==0:
         render_template('home.html', val='Your Report is Normal')
     else:
         render_template('home.html', val='Oops. Report Consist Pneumonia, Consult a Doctor')
 
 if __name__ == '__main__':
-    app.run(threaded=True)
+    app.run()
