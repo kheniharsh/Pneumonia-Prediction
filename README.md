@@ -1,7 +1,4 @@
-# Pneumonia-Prediction
-
-# Project Title: 
-Pneumonia Prediction System
+# Pneumonia Prediction System
 
 # Problem Statement/Opportunity: 
 Nowadays many people don't have much time to visit a doctor to show their report. So, we need a service which can predict whether a person is suffering from any disease or not. During Covid situation many patients have been admitted to the hospital who were suffering from Pneumonia. Doctors can conclude from a report whether a patient is suffering from a Pneumonia or not from Chest X Ray / CT Scan of Chest report. There were many doctors who were advising a patient to be admitted in hospital as they were suffering from Pneumonia, but the reality is doctors were also admitting the patient who were not suffering from Pneumonia. In the Health sector there is a great opportunity for introducing Artificial Intelligence and Machine Learning, which can help not only patients but doctors too for prediction of many different diseases.
