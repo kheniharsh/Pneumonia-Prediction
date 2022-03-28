@@ -1,5 +1,4 @@
 # Pneumonia-Prediction
-Hello,
 
 # Project Title: 
 Pneumonia Prediction System
